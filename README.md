@@ -10,9 +10,13 @@ Installation
 1. Clone repository by using this commands
 
   > cd C:\xampp\htdocs\
+  
   > git clone https://github.com/BosesPinas/boses-pinas.git
+  
   > cd boses-pinas
+  
   > C:\xampp\php\php composer.phar self-update
+  
   > C:\xampp\php\php composer.phar install
 
 2. Add this code on the bottom of the vhost file
