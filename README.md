@@ -24,13 +24,17 @@ Installation
   ```
     For XAMMP here is the location `C:\xampp\apache\conf\extra`
       <VirtualHost *:80>
-         ServerName pinasboses.com
-         DocumentRoot C:\xampp\htdocs\boses-pinas\public
-         <Directory C:\xampp\htdocs\boses-pinas\public>
-             AllowOverride All
-             Order allow,deny
-             Allow from all
-         </Directory>
+          ServerName pinasboses.com
+          DocumentRoot C:\xampp\htdocs\boses-pinas\public
+      
+          <Directory C:\xampp\htdocs\boses-pinas\public>
+              AllowOverride All
+              Order allow,deny
+              Allow from all
+          </Directory>
+      
+          ErrorLog "logs/pinasboses.com-error.log"
+          CustomLog "logs/pinasboses.com-access.log" common
       </VirtualHost>
     ```
     
