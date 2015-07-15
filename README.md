@@ -24,7 +24,7 @@ Installation
   ```
     For XAMMP here is the location `C:\xampp\apache\conf\extra`
       <VirtualHost *:80>
-          ServerName pinasboses.com
+          ServerName bosespinas.com
           DocumentRoot C:\xampp\htdocs\boses-pinas\public
       
           <Directory C:\xampp\htdocs\boses-pinas\public>
@@ -33,14 +33,14 @@ Installation
               Allow from all
           </Directory>
       
-          ErrorLog "logs/pinasboses.com-error.log"
-          CustomLog "logs/pinasboses.com-access.log" common
+          ErrorLog "logs/bosespinas.com-error.log"
+          CustomLog "logs/bosespinas.com-access.log" common
       </VirtualHost>
     ```
     
 3. Add this line in you host file
 
-  > `127.0.0.1   pinasboses.com`
+  > `127.0.0.1   bosespinas.com`
   
 4. Restart server
 
