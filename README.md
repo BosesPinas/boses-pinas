@@ -44,5 +44,5 @@ Installation
   
 4. Restart server
 
-5. Open browser and open this link `http://pinasboses.com`
+5. Open browser and open this link `http://bosespinas.com`
   
