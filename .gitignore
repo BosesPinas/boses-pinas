@@ -10,3 +10,4 @@ nbproject
 composer.lock
 vendor
 composer.phar
+npm-debug.log

@@ -8,6 +8,24 @@
  */
 
 return array(
+
+    'view_manager' => array(
+        'display_not_found_reason' => true,
+        'display_exceptions'       => true,
+        'doctype'                  => 'HTML5',
+        'not_found_template'       => 'error/404',
+        'exception_template'       => 'error/index',
+        'template_map' => array(
+            'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
+            'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
+            'error/404'               => __DIR__ . '/../view/error/404.phtml',
+            'error/index'             => __DIR__ . '/../view/error/index.phtml',
+        ),
+        'template_path_stack' => array(
+            __DIR__ . '/../view',
+        ),
+    ),
+    
     'router' => array(
         'routes' => array(
             'home' => array(
@@ -76,22 +94,40 @@ return array(
             'Application\Controller\Index' => 'Application\Controller\IndexController'
         ),
     ),
-    'view_manager' => array(
-        'display_not_found_reason' => true,
-        'display_exceptions'       => true,
-        'doctype'                  => 'HTML5',
-        'not_found_template'       => 'error/404',
-        'exception_template'       => 'error/index',
-        'template_map' => array(
-            'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
-            'error/404'               => __DIR__ . '/../view/error/404.phtml',
-            'error/index'             => __DIR__ . '/../view/error/index.phtml',
+
+    //social media api's config
+    'social_media_api' => array (
+        'twitter_api' => array(
+            'owner' => array(
+                'name' => 'PinasBoses',
+                'id' => '3280631840',
+            ),
+
+            'access_token' => array(
+                'token'  => '3280631840-HnO7tWvDr97jk5HzePRAykHqMthgAU5c64o2izX',
+                'secret' => 'wW3PltbhArHG5C7ZCr9jXMWYIyqznFXk9OXWyQ4A6e0Wu',
+            ),
+
+            'oauth_options' => array(
+                'consumerKey' => '5TTPHZtLjZJXVs2c2b386Tv5g',
+                'consumerSecret' => '4L4ByWe6rLlLnhgRLF5AQBxLarIUrOY0BAmzS41njiwbISARL6',
+            ),
+
+            'http_client_options' => array(
+                'adapter' => 'Zend\Http\Client\Adapter\Curl',
+                'curloptions' => array(
+                    CURLOPT_SSL_VERIFYHOST => false,
+                    CURLOPT_SSL_VERIFYPEER => false,
+                ),
+            ),
+
         ),
-        'template_path_stack' => array(
-            __DIR__ . '/../view',
-        ),
+
+        'facebook_api' => array(),
+        'instagram_api' => array(),
+        'google_plus_api' => array(),
     ),
+
     // Placeholder for console routes
     'console' => array(
         'router' => array(
