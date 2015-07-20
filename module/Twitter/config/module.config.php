@@ -4,16 +4,40 @@ return array(
 
     'router' => array(
         'routes' => array(
-            'post' => array(
+
+            'get-statuses-by-keyword' => array(
                 'type' => 'segment',
                 'options' => array(
-                    'route'    => '/getPostsByHashtag/:hashtag',
+                    'route'    => '/getStatusesByKeyword/:keyword',
                     'defaults' => array(
                         'controller' => 'Twitter\Controller\Twitter',
-                        'action'     => 'getPostsByHashtag',
+                        'action'     => 'getStatusesByKeyword',
                     )
                 )
-            )
+            ),
+
+            'get-recent-statuses-by-keyword' => array(
+                'type' => 'segment',
+                'options' => array(
+                    'route'    => '/getRecentStatusesByKeyword/:keyword',
+                    'defaults' => array(
+                        'controller' => 'Twitter\Controller\Twitter',
+                        'action'     => 'getRecentStatusesByKeyword',
+                    )
+                )
+            ),
+
+            'get-users-info-by-keyword' => array(
+                'type' => 'segment',
+                'options' => array(
+                    'route'    => '/getUsersInfoByKeyword/:keyword',
+                    'defaults' => array(
+                        'controller' => 'Twitter\Controller\Twitter',
+                        'action'     => 'getUsersInfoByKeyword',
+                    )
+                )
+            ),
+
         )
     ),
 

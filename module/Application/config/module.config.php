@@ -95,39 +95,6 @@ return array(
         ),
     ),
 
-    //social media api's config
-    'social_media_api' => array (
-        'twitter_api' => array(
-            'owner' => array(
-                'name' => 'PinasBoses',
-                'id' => '3280631840',
-            ),
-
-            'access_token' => array(
-                'token'  => '3280631840-HnO7tWvDr97jk5HzePRAykHqMthgAU5c64o2izX',
-                'secret' => 'wW3PltbhArHG5C7ZCr9jXMWYIyqznFXk9OXWyQ4A6e0Wu',
-            ),
-
-            'oauth_options' => array(
-                'consumerKey' => '5TTPHZtLjZJXVs2c2b386Tv5g',
-                'consumerSecret' => '4L4ByWe6rLlLnhgRLF5AQBxLarIUrOY0BAmzS41njiwbISARL6',
-            ),
-
-            'http_client_options' => array(
-                'adapter' => 'Zend\Http\Client\Adapter\Curl',
-                'curloptions' => array(
-                    CURLOPT_SSL_VERIFYHOST => false,
-                    CURLOPT_SSL_VERIFYPEER => false,
-                ),
-            ),
-
-        ),
-
-        'facebook_api' => array(),
-        'instagram_api' => array(),
-        'google_plus_api' => array(),
-    ),
-
     // Placeholder for console routes
     'console' => array(
         'router' => array(

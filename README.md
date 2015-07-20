@@ -24,6 +24,7 @@ Installation
   ```
     For XAMMP here is the location `C:\xampp\apache\conf\extra`
       <VirtualHost *:80>
+          SetEnv APPLICATION_ENV "local"
           ServerName bosespinas.com
           DocumentRoot C:\xampp\htdocs\boses-pinas\public
       

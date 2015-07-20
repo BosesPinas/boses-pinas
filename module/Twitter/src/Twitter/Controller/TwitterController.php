@@ -15,13 +15,48 @@ class TwitterController extends AbstractActionController
         $this->twitterService = $twitterService;
     }
 
-	public function getPostsByHashtagAction()
+	public function getStatusesByKeywordAction()
   	{
-  		$hashtag = $this->params()->fromRoute('hashtag');
+  		$keyword = $this->params()->fromRoute('keyword');
 
-  		\Zend\Debug\Debug::dump($this->twitterService->getStatusesByHashtag('#' . $hashtag));exit;
+  		$this->twitterService->searchStatusesByKeyword($keyword);
 
-    	$result = new JsonModel();
+  		$statuses = $this->twitterService->getSearchResults();
+
+  		$result = new JsonModel(array(
+  								'success' 	=> $this->twitterService->verifyCredentials() ? 1 : 0,
+  								'statuses' 	=> $this->twitterService->verifyCredentials() ? $statuses->statuses : new \stdClass(),
+  								));
+
+        return $result;
+  	}
+
+  	public function getRecentStatusesByKeywordAction()
+  	{
+  		$keyword = $this->params()->fromRoute('keyword');
+
+  		$this->twitterService->searchStatusesByKeyword($keyword);
+
+  		$statuses = $this->twitterService->getRecentStatuses();
+
+  		$result = new JsonModel(array(
+  								'success' 	=> $this->twitterService->verifyCredentials() ? 1 : 0,
+  								'statuses' 	=> $this->twitterService->verifyCredentials() ? $statuses : new \stdClass(),
+  								));
+
+        return $result;
+  	}
+
+  	public function getUsersInfoByKeywordAction()
+  	{
+  		$keyword = $this->params()->fromRoute('keyword');
+
+  		$users = $this->twitterService->getUsersInfoByKeyword($keyword);
+
+  		$result = new JsonModel(array(
+  								'success'	=> $this->twitterService->verifyCredentials() ? 1 : 0,
+  								'users' 	=> $this->twitterService->verifyCredentials() ? $users : new \stdClass(),
+  								));
 
         return $result;
   	}
