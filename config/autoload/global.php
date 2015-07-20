@@ -11,4 +11,30 @@
  * file.
  */
 
-return array();
+'social_media_api' => array (
+    'twitter_api' => array(
+        'owner' => array(
+            'name' => 'PinasBoses',
+            'id' => '3280631840',
+        ),
+
+        'access_token' => array(
+            'token'  => '<access token>',
+            'secret' => '<access secret>',
+        ),
+
+        'oauth_options' => array(
+            'consumerKey' => '<consumer key>',
+            'consumerSecret' => '<consumer secret>',
+        ),
+
+        'http_client_options' => array(
+            'adapter' => 'Zend\Http\Client\Adapter\Curl',
+            'curloptions' => array(
+                CURLOPT_SSL_VERIFYHOST => false,
+                CURLOPT_SSL_VERIFYPEER => false,
+            ),
+        ),
+
+    ),
+),
